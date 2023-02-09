@@ -1,0 +1,139 @@
+<html>
+  <head>
+    <style>
+      
+    </style>
+  </head>
+  <body>
+
+    <script >
+      //https://www.canva.com/design/DAFYHBYIx_w/v52uG7H2V1VqTFHLcEISyQ/edit?utm_content=DAFYHBYIx_w&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+    let input = document.createElement('input')
+    document.body.appendChild(input)
+    let num = [1,2,3,4,5,6,7,8,9,0]
+    
+
+
+  num.forEach(i => {
+    let but = document.createElement('button')
+    but.innerText = i
+    but.style.width = '200px'
+    but.style.borderRadius = '25px'
+    but.style.display = 'block'
+    document.body.appendChild(but)
+
+    but.onclick = function () {
+      input.value = input.value +i
+    }
+
+    });
+
+    //optration = ''  operation = '+' operation ='X'
+
+
+    let op = ''
+    let nom1 = 0
+    let nom2 = 0
+    let plus = document.createElement('button')
+    plus.innerText = '+'
+    plus.onclick = function () {
+      nom1 = input.value
+      input.value = ''
+       op = '+'
+    }
+
+    
+    let time = document.createElement('button');
+    time.innerText = 'x';
+    time.onclick = function () {
+      nom1 = input.value;
+      input.value = '';
+      op = 'x';
+    }
+    
+    let div = document.createElement('button')
+    div.innerText = '/'
+    div.onclick = function () {
+      nom1 = input.value
+      input.value = ''
+      op = '/'
+    }
+
+    let min = document.createElement('button')
+    min.innerText = '-'
+    min.onclick = function () {
+      nom1 = input.value
+      input.value = ''
+      op = '-'
+    }
+
+    let neg = document.createElement('button');
+    neg.innerText = '+/-'
+    neg.onclick = function () {
+      input.value = '-' + input.value
+    }
+    document.body.appendChild(neg)
+
+    let pres = document.createElement('button')
+    pres.innerText = '%';
+    pres.onclick = function () {
+      input.value =  parseInt(input.value) / 100;
+    }
+    document.body.appendChild(pres)
+
+    let clear = document.createElement('button');
+    clear.innerText = 'C'
+    clear.onclick = function () {
+      nom1 = 0
+      nom2 = 0;
+      input.value = ''
+    }
+
+    document.body.appendChild(plus)
+    document.body.appendChild(time)
+    document.body.appendChild(min)
+    document.body.appendChild(div)
+    document.body.appendChild(clear)
+
+
+    
+
+
+   
+    let equell = document.createElement('button')
+    equell.innerText = "="
+
+    equell.onclick = function () {
+      nom2 = input.value   
+      if (op == '+') {
+        input.value =  parseInt(nom1) + parseInt(nom2)   
+      } 
+      if (op == 'x') {
+        input.value = parseInt(nom1) * parseInt(nom2)
+        
+      }
+    if (op == '/') {
+      input.value = parseInt(nom1) / parseInt(nom2)
+      
+    }
+    if (op == '-') {
+      input.value = parseInt(nom1) - parseInt(nom2)  
+    }
+     
+
+    }
+
+
+    document.body.appendChild(equell)
+    
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
